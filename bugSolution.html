@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be blue.
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll('div[id=myDiv]');
+
+    //Convert NodeList to an array
+    const elementsArray = Array.from(elements);
+
+    elementsArray.forEach(element => {
+      element.style.color = 'blue';
+    });
+  </script>
+</body>
+</html>
