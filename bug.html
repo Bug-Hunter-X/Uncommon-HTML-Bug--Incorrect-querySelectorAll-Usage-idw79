@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    //Incorrect usage of querySelectorAll with an invalid selector
+    const elements = document.querySelectorAll('div[id=myDiv]');
+
+    //The following line will throw an error because querySelectorAll returns a NodeList, not an array.
+    elements.forEach(element => {
+      element.style.color = 'blue';
+    });
+  </script>
+</body>
+</html>
